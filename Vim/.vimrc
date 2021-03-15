@@ -2,6 +2,8 @@ set tabstop=4
 set expandtab
 set ff=unix
 set encoding=utf-8
+"set novisualbell
+set belloff=all
 
 if has("gui_running")
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -30,7 +32,6 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
 set guioptions=""
-set guifont=Liberation_Mono:h10
 
 colorscheme hypermild
 highlight Pmenu guibg=#101020 guifg=#404080
@@ -41,4 +42,6 @@ highlight TabLineFill guibg=#101020 guifg=#202040
 highlight TabLine guibg=#101020 guifg=#6060a0
 highlight TabLineSel guibg=#404080 guifg=#70a0f0
 highlight VertSplit guibg=#202040 guifg=#70a0f0
+
+source ~/.vim/scripts/zoom.vim
 endif
