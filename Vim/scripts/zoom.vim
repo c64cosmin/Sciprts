@@ -8,7 +8,7 @@ function C64_fontzoomup()
     if g:c64_fontzoom > g:c64_fontzoommax
         let g:c64_fontzoom=g:c64_fontzoommax
     endif
-    let guifontstring="Liberation_Mono:h" . g:c64_fontzoom
+    let guifontstring=g:c64_guifontstring . ":h" . g:c64_fontzoom
     let &guifont=guifontstring
 endfunction
 
@@ -17,18 +17,19 @@ function C64_fontzoomdw()
     if g:c64_fontzoom < g:c64_fontzoommin
         let g:c64_fontzoom=g:c64_fontzoommin
     endif
-    let guifontstring="Liberation_Mono:h" . g:c64_fontzoom
+    let guifontstring=g:c64_guifontstring . ":h" . g:c64_fontzoom
     let &guifont=guifontstring
 endfunction
 
 function C64_fontzoomdef()
     let g:c64_fontzoom=g:c64_fontzoomdef
-    let guifontstring="Liberation_Mono:h" . g:c64_fontzoom
+    let guifontstring=g:c64_guifontstring . ":h" . g:c64_fontzoom
     let &guifont=guifontstring
 endfunction
 
 nnoremap z= :call C64_fontzoomup()<CR>
 nnoremap z- :call C64_fontzoomdw()<CR>
 nnoremap z0 :call C64_fontzoomdef()<CR>
+map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
 
 call C64_fontzoomdef()
