@@ -8,10 +8,10 @@ set belloff=all
 set novisualbell
 set ssop-=options    " do not store global and local values in a session
 set ssop-=folds      " do not store folds
-nnoremap g<C-t> :tab split<CR>
-nnoremap gb :tab term<CR>
-nnoremap <C-b> :vert term<CR>
-nnoremap <C-w> :Vex<CR>
+nnoremap gg :tab split<CR>
+nnoremap gb :let $VIM_DIR=expand('%:p:h')<CR>:tab term<CR>cd $VIM_DIR<CR>
+nnoremap ge :tab split<CR>:Ex<CR>
+nnoremap <C-w>b :let $VIM_DIR=expand('%:p:h')<CR>:vert term<CR>cd $VIM_DIR<CR>
+nnoremap <C-w>e :Vex<CR>
 nnoremap <C-e> :Ex<CR>
-nnoremap <C-q> :q<CR>
 nnoremap <C-s> :source <Up><CR>
