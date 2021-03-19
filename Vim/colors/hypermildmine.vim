@@ -1,10 +1,32 @@
+"MIT License
+"
+"Copyright (c) 2017 Chris Hung
+"
+"Permission is hereby granted, free of charge, to any person obtaining a copy
+"of this software and associated documentation files (the "Software"), to deal
+"in the Software without restriction, including without limitation the rights
+"to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+"copies of the Software, and to permit persons to whom the Software is
+"furnished to do so, subject to the following conditions:
+"
+"The above copyright notice and this permission notice shall be included in all
+"copies or substantial portions of the Software.
+"
+"THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+"IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+"FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+"AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+"LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+"OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+"SOFTWARE.
+
 highlight clear
 
 if exists('syntax_on')
   syntax reset
 endif
 
-let g:colors_name = 'hyper'
+let g:colors_name = 'hypermildmine'
 set background=dark
 
 
@@ -25,35 +47,41 @@ let s:none        =   'NONE'
 
 
 " Background
-let s:bg = '#0d0d0d'
+let s:bg = '#000000'
 
 
 " Colors base
-let s:primary       =   '#d55fde'
-let s:secondary     =   '#d55fde'
+let s:primary       =   '#20a040'
+let s:secondary     =   '#bdbb5b'
 
-let s:source        =   '#bbbbbb'
-let s:keyword       =   s:primary
-let s:structure     =   s:primary
-let s:scalar        =   '#d8985f'
-let s:string        =   '#89ca78'
+let s:type          =   s:secondary
+let s:source        =   '#a0a0a0'
+let s:keyword       =   '#c7c400'
+let s:structure     =   '#ff0000'
+let s:scalar        =   '#e05030'
+let s:string        =   '#6e81b5'
 
-let s:comment       =   '#737c8c'
+let s:function      =   '#b040d0'
 
+let s:comment       =   '#334f33'
+let s:preproc       =   '#44aa44'
+
+let s:error         =   '#ff0000'
+let s:errorbg       =   '#550000'
 
 " Syntax highlighting groups
 call s:hi('Comment', s:comment, s:bg, s:none)
 call s:hi('Constant', s:primary, s:bg, s:none)
 call s:hi('String', s:string, s:bg, s:none)
 call s:hi('Character', s:string, s:bg, s:none)
-call s:hi('Number', s:scalar, s:bg, s:none)
+call s:hi('Number', s:scalar, s:bg, s:bold)
 call s:hi('Boolean', s:scalar, s:bg, s:none)
-call s:hi('Float', s:scalar, s:bg, s:none)
+call s:hi('Float', s:scalar, s:bg, s:bold)
 
 call s:hi('Identifier', s:primary, s:bg, s:none)
-call s:hi('Function', '#52adf2', s:bg, s:none)
+call s:hi('Function', s:function, s:bg, s:bold)
 
-call s:hi('Statement', s:secondary, s:bg, s:none)
+call s:hi('Statement', s:keyword, s:bg, s:bold)
 call s:hi('Conditional', s:keyword, s:bg, s:none)
 call s:hi('Repeat', s:keyword, s:bg, s:none)
 call s:hi('Label', s:primary, s:bg, s:none)
@@ -61,13 +89,13 @@ call s:hi('Operator', s:source, s:bg, s:none)
 call s:hi('Keyword', s:primary, s:bg, s:none)
 call s:hi('Exception', s:primary, s:bg, s:none)
 
-call s:hi('PreProc', s:primary, s:bg, s:none)
-call s:hi('Include', s:primary, s:bg, s:none)
-call s:hi('Define', s:source, s:bg, s:none)
-call s:hi('Macro', s:primary, s:bg, s:none)
-call s:hi('PreCondit', s:primary, s:bg, s:none)
+call s:hi('PreProc', s:preproc, s:bg, s:none)
+call s:hi('Include', s:preproc, s:bg, s:none)
+call s:hi('Define', s:preproc, s:bg, s:none)
+call s:hi('Macro', s:preproc, s:bg, s:none)
+call s:hi('PreCondit', s:preproc, s:bg, s:none)
 
-call s:hi('Type', '#e5c07b', s:bg, s:none)
+call s:hi('Type', s:type, s:bg, s:bold)
 call s:hi('StorageClass', s:primary, s:bg, s:none)
 call s:hi('Structure', s:primary, s:bg, s:none)
 call s:hi('Typedef', s:primary, s:bg, s:none)
@@ -79,8 +107,8 @@ call s:hi('SpecialComment', s:comment, s:bg, s:none)
 call s:hi('Debug', s:primary, s:bg, s:none)
 call s:hi('Underlined', s:source, s:bg, s:underline)
 call s:hi('Todo', s:primary, s:bg, s:none)
-call s:hi('Error', s:primary, s:bg, s:underline)
-call s:hi('ErrorMsg', s:primary, s:bg, s:none)
+call s:hi('Error', s:error, s:errorbg, s:underline)
+call s:hi('ErrorMsg', s:error, s:errorbg, s:bold)
 call s:hi('Question', s:string, s:bg, s:none)
 call s:hi('WarningMsg', s:primary, s:none, s:none)
 call s:hi('Search', s:bg, s:source, s:none)
@@ -94,8 +122,8 @@ call s:hi('ColorColumn', s:source, '#1a1a1a', s:none)
 
 " Interface highlighting
 call s:hi('Normal', s:source, s:bg, s:none)
-call s:hi('Visual', s:none, '#393e46', s:none)
-call s:hi('Cursor', s:none, s:bg, s:none)
+call s:hi('Visual', s:none, '#305030', s:none)
+call s:hi('Cursor', '#ff0000', s:bg, s:none)
 call s:hi('iCursor', s:none, s:bg, s:none)
 call s:hi('LineNr', '#495162', s:bg, s:none)
 call s:hi('NonText', s:comment, s:bg, s:none)
