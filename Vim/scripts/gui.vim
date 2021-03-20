@@ -8,7 +8,7 @@ call vundle#end()
 filetype plugin indent on
 
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_auto_trigger = 1
+"let g:ycm_auto_trigger = 1
 
 nmap <Leader>d :YcmCompleter GoToDeclaration<CR>
 nmap <Leader>f :YcmCompleter GoToDefinition<CR>

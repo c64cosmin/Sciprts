@@ -1,6 +1,7 @@
 source ~/.vim/scripts/gui.vim
 
 set tabstop=4
+set shiftwidth=4
 set expandtab
 set ff=unix
 set encoding=utf-8
@@ -17,10 +18,10 @@ if &diff
     hi DiffLine   guifg=#ff0000
 endif
 nmap gg :tab split<CR>
-nmap gb :let $VIM_DIR=expand('%:p:h')<CR>:tab term<CR>cd $VIM_DIR<CR>
+nmap gb :let $VIM_DIR=expand('%:p:h')<CR>:tab term<CR>cd $VIM_DIR;clear<CR>
 nmap ge :tab split<CR>:Ex<CR>
-nmap <C-w>b :let $VIM_DIR=expand('%:p:h')<CR>:vert term<CR>cd $VIM_DIR<CR>
+nmap <C-w>b :let $VIM_DIR=expand('%:p:h')<CR>:vert term<CR>cd $VIM_DIR;clear<CR>
 nmap <C-w>e :Vex<CR>
 nmap <C-e> :Ex<CR>
-nmap <C-s> :source ~/.vim/session/last.vim<CR>
-nmap <Leader><C-s> :mksession! ~/.vim/session/last.vim<CR>
+nmap <Leader>s :source ~/.vim/session/last.vim<CR>
+nmap <Leader>S :mksession! ~/.vim/session/last.vim<CR>
