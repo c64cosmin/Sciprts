@@ -26,7 +26,7 @@ nmap ge :tab split<CR>:Ex<CR>
 nmap <C-w>b :let $VIM_DIR=expand('%:p:h')<CR>:vert term<CR>cd $VIM_DIR;clear<CR>
 nmap <C-w>e :Vex<CR>
 nmap <C-e> :Ex<CR>
-nmap <Leader>p :call CloseHiddenBuffers()<CR>:source ~/.vim/session/last.vim<CR>
-nmap <Leader>P :call CloseHiddenBuffers()<CR>:mksession! ~/.vim/session/last.vim<CR>
-nmap <Leader>op :call CloseHiddenBuffers()<CR>:mksession! ~/.vim/session/last.vim<CR>:source ~/.vim/session/
+nmap <Leader>p  :call CloseHiddenBuffers()<CR>:source     ~/.vim/session/last.vim<CR>
+nmap <Leader>P  :call CloseHiddenBuffers()<CR>:mksession! ~/.vim/session/last.vim<CR>
+nmap <Leader>op :call CloseHiddenBuffers()<CR>:source ~/.vim/session/
 nmap <Leader>oP :call CloseHiddenBuffers()<CR>:mksession! ~/.vim/session/last.vim<CR>:mksession! ~/.vim/session/
