@@ -1,5 +1,3 @@
-set hlsearch
-nmap <F3> :set hlsearch! hlsearch?<CR>
 set ff=unix
 set encoding=utf-8
 set belloff=all
@@ -14,12 +12,17 @@ if &diff
     hi DiffDelete guifg=#660000 guibg=#000000
     hi DiffLine   guifg=#ff0000
 endif
+set hlsearch
+nmap <F3> :set hlsearch! hlsearch?<CR>
 nmap gg :tab split<CR>
 nmap gb :let $VIM_DIR=expand('%:p:h')<CR>:tab term<CR>cd $VIM_DIR;clear<CR>
 nmap ge :tab split<CR>:Ex<CR>
 nmap <C-w>b :let $VIM_DIR=expand('%:p:h')<CR>:vert term<CR>cd $VIM_DIR;clear<CR>
 nmap <C-w>e :Vex<CR>
 nmap <C-e> :Ex<CR>
+nmap g<Right> :tabm +1<CR>
+nmap g<Left> :tabm -1<CR>
+nmap <Leader>l :set list! list?<CR>
 nmap <Leader>p  :call CloseHiddenBuffers()<CR>:source     ~/.vim/session/last.vim<CR>
 nmap <Leader>P  :call CloseHiddenBuffers()<CR>:mksession! ~/.vim/session/last.vim<CR>
 nmap <Leader>op :call CloseHiddenBuffers()<CR>:source ~/.vim/session/
