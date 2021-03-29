@@ -13,6 +13,8 @@ if &diff
     hi DiffLine   guifg=#ff0000
 endif
 set hlsearch
+nmap <A-Up> ddkP
+nmap <A-Down> ddp
 nmap <F3> :set hlsearch! hlsearch?<CR>
 nmap gg :tab split<CR>
 nmap gb :let $VIM_DIR=expand('%:p:h')<CR>:tab term<CR>cd $VIM_DIR;clear<CR>
