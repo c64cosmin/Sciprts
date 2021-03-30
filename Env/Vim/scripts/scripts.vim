@@ -1,10 +1,14 @@
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
 set ff=unix
 set encoding=utf-8
 set belloff=all
 set novisualbell
 set ssop-=options    " do not store global and local values in a session
 set ssop-=folds      " do not store folds
+
 let g:html_use_css=1
+
 if &diff
     hi DiffAdd    guifg=NONE    guibg=#002200
     hi DiffChange guifg=NONE    guibg=#000044
@@ -12,7 +16,7 @@ if &diff
     hi DiffDelete guifg=#660000 guibg=#000000
     hi DiffLine   guifg=#ff0000
 endif
-set hlsearch
+
 nmap <A-Down> :m .+1<CR>==
 nmap <A-Up> :m .-2<CR>==
 imap <A-Down> <Esc>:m .+1<CR>==i

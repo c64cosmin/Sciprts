@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ -z $VIM ]; then
+    echo "Run inside Vim"
+    exit 1
+fi
+
 echo VIM = $VIM
 echo HOME = $HOME
 
