@@ -17,12 +17,12 @@ nmap <Leader>yi :YcmCompleter GoToInclude<CR>
 nmap <Leader>yr :YcmCompleter GoToReferences<CR>
 nmap <Leader>yy :YcmRestartServer<CR>
 nmap <leader>yt <plug>(YCMHover)
-nmap <Leader>wd :vsplit<CR><C-w>w:YcmCompleter GoToDeclaration<CR>
-nmap <Leader>wf :vsplit<CR><C-w>w:YcmCompleter GoToDefinition<CR>
-nmap <Leader>wi :vsplit<CR><C-w>w:YcmCompleter GoToInclude<CR>
-nmap <Leader>sd  :split<CR><C-w>w:YcmCompleter GoToDeclaration<CR>
-nmap <Leader>sf  :split<CR><C-w>w:YcmCompleter GoToDefinition<CR>
-nmap <Leader>si  :split<CR><C-w>w:YcmCompleter GoToInclude<CR>
+nmap <Leader>vd  :vsplit<CR><C-w>w:YcmCompleter GoToDeclaration<CR>
+nmap <Leader>vf  :vsplit<CR><C-w>w:YcmCompleter GoToDefinition<CR>
+nmap <Leader>vi  :vsplit<CR><C-w>w:YcmCompleter GoToInclude<CR>
+nmap <Leader>sd   :split<CR><C-w>w:YcmCompleter GoToDeclaration<CR>
+nmap <Leader>sf   :split<CR><C-w>w:YcmCompleter GoToDefinition<CR>
+nmap <Leader>si   :split<CR><C-w>w:YcmCompleter GoToInclude<CR>
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 let g:EasyMotion_smartcase = 1
