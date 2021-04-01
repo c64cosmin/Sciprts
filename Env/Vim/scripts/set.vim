@@ -11,3 +11,8 @@ set ssop-=options    " do not store global and local values in a session
 set ssop-=folds      " do not store folds
 
 let g:html_use_css=1
+
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+let g:netrw_silent = 1
+let g:netrw_errorlvl = 2

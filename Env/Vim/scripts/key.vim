@@ -9,17 +9,16 @@ vmap <A-Up> :m '<-2<CR>gv=gv
 nmap <F3> :set hlsearch! hlsearch?<CR>
 "Create new vertical terminal in current dir
 nmap <C-w>b :let $VIM_DIR=expand('%:p:h')<CR>:vert term<CR>cd $VIM_DIR;clear<CR>
-nmap <C-w>e :Vex<CR>
-nmap <C-e> :Ex<CR>
+nmap <C-w>e :Lex<CR>
+nmap <C-e> :call ToggleExplorer()<CR>
 "Move tabs left/right
 nmap g<Right> :tabm +1<CR>
 nmap g<Left> :tabm -1<CR>
 nmap gg :tab split<CR>
 "New terminal tab in current dir
 nmap gb :let $VIM_DIR=expand('%:p:h')<CR>:tab term<CR>cd $VIM_DIR;clear<CR>
-nmap ge :tab split<CR>:Ex<CR>
+nmap ge :Tex<CR>
 nmap <Leader>l :set list! list?<CR>
-nmap <Leader>p  :call CloseHiddenBuffers()<CR>:source     ~/.vim/session/last.vim<CR>
-nmap <Leader>P  :call CloseHiddenBuffers()<CR>:mksession! ~/.vim/session/last.vim<CR>
-nmap <Leader>op :call CloseHiddenBuffers()<CR>:source     ~/.vim/session/
-nmap <Leader>oP :call CloseHiddenBuffers()<CR>:mksession! ~/.vim/session/last.vim<CR>:mksession! ~/.vim/session/
+nmap <Leader>w :set wrap! wrap?<CR>
+nmap <Leader>p :call CloseHiddenBuffers()<CR>:source     ~/.vim/session/
+nmap <Leader>P :call CloseHiddenBuffers()<CR>:mksession! ~/.vim/session/

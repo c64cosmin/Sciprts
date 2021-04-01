@@ -1,3 +1,4 @@
+if has("gui_running")
 colorscheme hypermildmine
 
 let s:color_b0="#101020"
@@ -34,3 +35,12 @@ exec "hi EndOfBuffer      guibg=" . s:black    . " guifg=" . s:color_r0 . " gui=
 
 exec "hi EasyMotionTarget guifg=" . s:red                               . " gui=bold"
 exec "hi EasyMotionShade  guifg=" . s:color_b2
+endif
+
+if &diff
+    hi DiffAdd    guifg=NONE    guibg=#002200
+    hi DiffChange guifg=NONE    guibg=#000044
+    hi DiffText   guifg=NONE    guibg=NONE
+    hi DiffDelete guifg=#660000 guibg=#000000
+    hi DiffLine   guifg=#ff0000
+endif
