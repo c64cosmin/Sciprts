@@ -9,6 +9,8 @@ function ToggleExplorer()
         else
             if exists("w:netrw_rexlocal")
                 Rexplore
+            else
+                exec 'q'
             endif
         endif
     else
