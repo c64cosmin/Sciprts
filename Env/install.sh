@@ -12,3 +12,4 @@ cp    Vim/vimrc   $VIM/vimrc
 cp -r Vim/scripts $HOME/.vim/scripts
 cp -r Vim/colors  $VIM
 cp    Mintty/c64  /usr/share/mintty/themes
+cp    Home/*      ~
