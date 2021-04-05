@@ -1,5 +1,5 @@
 if has("gui_running")
-set guioptions="!c"
+set guioptions=!c
 let g:c64_guifontstring="Liberation_Mono"
 
 let g:c64_fontzoommax=30
