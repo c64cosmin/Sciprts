@@ -38,7 +38,7 @@ nmap <Leader>yf :YcmCompleter GoToDefinition<CR>
 nmap <Leader>yi :YcmCompleter GoToInclude<CR>
 nmap <Leader>yr :YcmCompleter GoToReferences<CR>
 nmap <Leader>yx :YcmCompleter FixIt<CR>
-nmap <Leader>yn :YcmCompleter RefactorRename<CR>
+nmap <Leader>yn :YcmCompleter RefactorRename 
 nmap <Leader>yy :YcmRestartServer<CR>
 nmap <leader>yt <plug>(YCMHover)
 nmap <Leader>vd  :vsplit<CR><C-w>w:YcmCompleter GoToDeclaration<CR>
