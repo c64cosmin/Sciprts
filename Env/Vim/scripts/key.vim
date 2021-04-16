@@ -33,6 +33,7 @@ nmap <Leader>em :SignatureToggleSigns<CR>
 
 if has("gui_running")
 "YouCompleteMe
+nmap <Leader>ye :lopen<CR>
 nmap <Leader>yd :YcmCompleter GoToDeclaration<CR>
 nmap <Leader>yf :YcmCompleter GoToDefinition<CR>
 nmap <Leader>yi :YcmCompleter GoToInclude<CR>
