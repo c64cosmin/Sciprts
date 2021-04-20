@@ -23,7 +23,7 @@ nmap <Leader>ew :set wrap! wrap?<CR>
 nmap <Leader>en :set number! number?<CR>
 nmap <Leader>eN :set relativenumber! relativenumber?<CR>
 nmap <Leader>p :call CloseHiddenBuffers()<CR>:source     ~/.vim/session/
-nmap <Leader>P :call CloseHiddenBuffers()<CR>:mksession! ~/.vim/session/
+nmap <Leader>P :call CloseHiddenBuffers()<CR>:mksession! ~/.vim/session/last.vim<CR>:mksession! ~/.vim/session/
 
 "EasyMotion
 nmap s <Plug>(easymotion-overwin-f2)
