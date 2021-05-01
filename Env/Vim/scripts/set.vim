@@ -7,6 +7,8 @@ set ff=unix
 set encoding=utf-8
 set belloff=all
 set novisualbell
+set foldmethod=indent
+set foldlevel=100
 set ssop-=options    " do not store global and local values in a session
 set ssop-=folds      " do not store folds
 

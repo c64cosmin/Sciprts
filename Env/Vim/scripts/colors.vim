@@ -22,6 +22,7 @@ exec "hi TabLineFill      guifg=" . s:color_b1
 exec "hi TabLine          guibg=" . s:color_b0 . " guifg=" . s:color_b3
 exec "hi TabLineSel       guibg=" . s:color_b2 . " guifg=" . s:color_b4
 exec "hi VertSplit        guibg=" . s:color_b1 . " guifg=" . s:color_b4
+exec "hi Folded           guibg=" . s:color_b1 . " guifg=" . s:color_b4 . " gui=bold"
 exec "hi StatusLine       guibg=" . s:color_b4 . " guifg=" . s:black    . " gui=bold"
 exec "hi StatusLineNC     guibg=" . s:color_b2 . " guifg=" . s:black    . " gui=none"
 exec "hi StatusLineTerm   guibg=" . s:color_g1 . " guifg=" . s:black    . " gui=bold"
