@@ -24,8 +24,10 @@ nmap <Leader>en :set number! number?<CR>
 nmap <Leader>eN :set relativenumber! relativenumber?<CR>
 nmap <Leader>eh :%!xxd<CR>
 nmap <Leader>eH :%!xxd -r<CR>
-nmap <Leader>p :call CloseHiddenBuffers()<CR>:source     ~/.vim/session/
-nmap <Leader>P :call CloseHiddenBuffers()<CR>:mksession! ~/.vim/session/last.vim<CR>:mksession! ~/.vim/session/
+nmap <Leader>po :call CloseHiddenBuffers()<CR>:source     ~/.vim/session/
+nmap <Leader>pw :call CloseHiddenBuffers()<CR>:mksession! ~/.vim/session/last.vim<CR>:mksession! ~/.vim/session/
+"New editor
+nmap <Leader>V :!gvim<CR><CR>
 
 "EasyMotion
 nmap s <Plug>(easymotion-overwin-f2)
@@ -33,7 +35,6 @@ nmap S <Plug>(easymotion-bd-jk)
 "vim-signature
 nmap <Leader>em :SignatureToggleSigns<CR> 
 
-if has("gui_running")
 "YouCompleteMe
 nmap <Leader>ye :YcmDiags<CR>
 nmap <Leader>yd :YcmCompleter GoToDeclaration<CR>
@@ -50,4 +51,4 @@ nmap <Leader>vi  :vsplit<CR><C-w>w:YcmCompleter GoToInclude<CR>
 nmap <Leader>sd   :split<CR><C-w>w:YcmCompleter GoToDeclaration<CR>
 nmap <Leader>sf   :split<CR><C-w>w:YcmCompleter GoToDefinition<CR>
 nmap <Leader>si   :split<CR><C-w>w:YcmCompleter GoToInclude<CR>
-endif
+nmap <C-LeftMouse> <LeftMouse>:YcmCompleter GoTo<CR>

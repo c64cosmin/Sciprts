@@ -1,47 +1,79 @@
 if has("gui_running")
-colorscheme hypermildmine
+	colorscheme hypermildmine
 
-let s:color_b0="#101020"
-let s:color_b1="#202040"
-let s:color_b2="#404080"
-let s:color_b3="#6060a0"
-let s:color_b4="#70a0f0"
-let s:color_g0="#305030"
-let s:color_g1="#38a038"
-let s:color_g2="#40f040"
-let s:color_r0="#601010"
-let s:none  ="NONE"
-let s:red   ="#ff0000"
-let s:black ="#000000"
-let s:white ="#ffffff"
+	let s:bg=" guibg="
+	let s:fg=" guifg="
+	let s:tx=" gui="
 
-exec "hi Pmenu            guibg=" . s:color_b1 . " guifg=" . s:color_b3
-exec "hi PmenuSel         guibg=" . s:color_b2 . " guifg=" . s:color_b4
-exec "hi Title            guibg=" . s:none     . " guifg=" . s:color_b4
-exec "hi TabLineFill      guifg=" . s:color_b1
-exec "hi TabLine          guibg=" . s:color_b0 . " guifg=" . s:color_b3
-exec "hi TabLineSel       guibg=" . s:color_b2 . " guifg=" . s:color_b4
-exec "hi VertSplit        guibg=" . s:color_b1 . " guifg=" . s:color_b4
-exec "hi Folded           guibg=" . s:color_b1 . " guifg=" . s:color_b4 . " gui=bold"
-exec "hi StatusLine       guibg=" . s:color_b4 . " guifg=" . s:black    . " gui=bold"
-exec "hi StatusLineNC     guibg=" . s:color_b2 . " guifg=" . s:black    . " gui=none"
-exec "hi StatusLineTerm   guibg=" . s:color_g1 . " guifg=" . s:black    . " gui=bold"
-exec "hi StatusLineTermNC guibg=" . s:color_g0 . " guifg=" . s:black    . " gui=none"
-exec "hi LineNr           guibg=" . s:color_b2 . " guifg=" . s:color_b4 . " gui=bold"
-exec "hi Visual           guibg=" . s:color_g0 . " guifg=" . s:color_g1 . " gui=bold"
-exec "hi IncSearch        guibg=" . s:color_g1 . " guifg=" . s:color_g2
-exec "hi Search           guibg=" . s:color_g0 . " guifg=" . s:color_g1
-exec "hi Cursor           guibg=" . s:color_g1 . " guifg=" . s:color_g2 . " gui=bold"
-exec "hi EndOfBuffer      guibg=" . s:black    . " guifg=" . s:color_r0 . " gui=bold"
+	let s:color_b0="#101020"
+	let s:color_b1="#202040"
+	let s:color_b2="#404080"
+	let s:color_b3="#6060a0"
+	let s:color_b4="#70a0f0"
+	let s:color_g0="#305030"
+	let s:color_g1="#38a038"
+	let s:color_g2="#40f040"
+	let s:color_r0="#601010"
+	let s:none  ="NONE"
+	let s:red   ="#ff0000"
+	let s:black ="#000000"
+	let s:white ="#ffffff"
 
-exec "hi EasyMotionTarget guifg=" . s:red                               . " gui=bold"
-exec "hi EasyMotionShade  guifg=" . s:color_b2
+	let s:diff_add_bg="#002200"
+	let s:diff_chg_bg="#000044"
+	let s:diff_del_fg="#660000"
+else
+	set t_Co=256
+
+	let s:bg=" ctermbg="
+	let s:fg=" ctermfg="
+	let s:tx=" cterm="
+
+	let s:color_b0="16"
+	let s:color_b1="17"
+	let s:color_b2="60"
+	let s:color_b3="61"
+	let s:color_b4="75"
+	let s:color_g0="59"
+	let s:color_g1="71"
+	let s:color_g2="83"
+	let s:color_r0="52"
+	let s:none  ="NONE"
+	let s:red   ="9"
+	let s:black ="0"
+	let s:white ="15"
+
+	let s:diff_add_bg="52"
+	let s:diff_chg_bg="17"
+	let s:diff_del_fg="52"
 endif
 
+exec "hi Pmenu            " . s:bg . s:color_b1 . s:fg . s:color_b3
+exec "hi PmenuSel         " . s:bg . s:color_b2 . s:fg . s:color_b4
+exec "hi Title            " . s:bg . s:none     . s:fg . s:color_b4
+exec "hi TabLineFill      "                     . s:fg . s:color_b1
+exec "hi TabLine          " . s:bg . s:color_b0 . s:fg . s:color_b3
+exec "hi TabLineSel       " . s:bg . s:color_b2 . s:fg . s:color_b4
+exec "hi VertSplit        " . s:bg . s:color_b1 . s:fg . s:color_b4
+exec "hi Folded           " . s:bg . s:color_b1 . s:fg . s:color_b4 . s:tx . "bold"
+exec "hi StatusLine       " . s:bg . s:color_b4 . s:fg . s:black    . s:tx . "bold"
+exec "hi StatusLineNC     " . s:bg . s:color_b2 . s:fg . s:black    . s:tx . "none"
+exec "hi StatusLineTerm   " . s:bg . s:color_g1 . s:fg . s:black    . s:tx . "bold"
+exec "hi StatusLineTermNC " . s:bg . s:color_g0 . s:fg . s:black    . s:tx . "none"
+exec "hi LineNr           " . s:bg . s:color_b2 . s:fg . s:color_b4 . s:tx . "bold"
+exec "hi Visual           " . s:bg . s:color_g0 . s:fg . s:color_g1 . s:tx . "bold"
+exec "hi IncSearch        " . s:bg . s:color_g1 . s:fg . s:color_g2
+exec "hi Search           " . s:bg . s:color_g0 . s:fg . s:color_g1
+exec "hi Cursor           " . s:bg . s:color_g1 . s:fg . s:color_g2 . s:tx . "bold"
+exec "hi EndOfBuffer      " . s:bg . s:black    . s:fg . s:color_r0 . s:tx . "bold"
+
+exec "hi EasyMotionTarget " . s:fg . s:red                          . s:tx . "bold"
+exec "hi EasyMotionShade  " . s:fg . s:color_b2
+
 if &diff
-    hi DiffAdd    guifg=NONE    guibg=#002200
-    hi DiffChange guifg=NONE    guibg=#000044
-    hi DiffText   guifg=NONE    guibg=NONE
-    hi DiffDelete guifg=#660000 guibg=#000000
-    hi DiffLine   guifg=#ff0000
+    exec "hi DiffAdd    " . s:fg . s:none        . s:bg . s:diff_add_bg
+    exec "hi DiffChange " . s:fg . s:none        . s:bg . s:diff_chg_bg
+    exec "hi DiffText   " . s:fg . s:none        . s:bg . s:none
+    exec "hi DiffDelete " . s:fg . s:diff_del_fg . s:bg . s:black
+    exec "hi DiffLine   " . s:fg . s:red
 endif
