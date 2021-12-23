@@ -108,7 +108,7 @@ else
 
     let s:function      =   '134'
 
-    let s:comment       =   '17'
+    let s:comment       =   '236'
     let s:preproc       =   '34'
 
     let s:error         =   '196'
