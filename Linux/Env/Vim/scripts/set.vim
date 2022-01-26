@@ -19,7 +19,8 @@ let g:netrw_banner = 0
 let g:netrw_silent = 1
 let g:netrw_errorlvl = 2
 let g:netrw_preview = 1
-let g:newrw_winsize = 30
+let g:netrw_winsize = 25
+let g:netrw_liststyle = 3
 
 "EasyMotion
 let g:EasyMotion_do_mapping = 0 " Disable default mappings

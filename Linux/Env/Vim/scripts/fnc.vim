@@ -1,32 +1,18 @@
 function ToggleExplorer()
-    "we are in netrw
-    if &ft == "netrw"
-        if exists("w:netrw_rexfile")
-            if w:netrw_rexfile == "" || w:netrw_rexfile == "NetrwTreeListing"
-                exec 'q'
-            else
-                exec 'e ' . w:netrw_rexfile
-            endif
-        else
-            if exists("w:netrw_rexlocal")
-                Rexplore
-            else
-                exec 'q'
-            endif
+    "find if there is a netrw
+    let netrw_winid = 0
+    for winid in gettabinfo(tabpagenr())[0].windows
+        if getwinvar(winid, "&ft") == "netrw"
+            let netrw_winid = winid
         endif
+    endfor
+    if netrw_winid == 0
+        exec 'Lexplore ' . expand('%:p:h')
     else
-        "is there netrw open
-        let netrw_isopen = 0
-        for winid in gettabinfo(tabpagenr())[0].windows
-            if getwinvar(winid, "&ft") == "netrw"
-                let netrw_isopen = 1
-				"if there is we focus on it
-                call win_gotoid(winid)
-            endif
-        endfor
-        if netrw_isopen == 0
-            exec 'Lexplore ' . expand('%:p:h')
-            exec 'vertical resize 50'
+        if win_getid() == netrw_winid
+            exec 'q'
+        else
+            call win_gotoid(netrw_winid)
         endif
     endif
 endfun
