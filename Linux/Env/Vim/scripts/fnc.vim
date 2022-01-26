@@ -1,4 +1,5 @@
 function ToggleExplorer()
+    "we are in netrw
     if &ft == "netrw"
         if exists("w:netrw_rexfile")
             if w:netrw_rexfile == "" || w:netrw_rexfile == "NetrwTreeListing"
@@ -14,7 +15,18 @@ function ToggleExplorer()
             endif
         endif
     else
-        Explore
+        "is there netrw open
+        let netrw_isopen = 0
+        for winid in gettabinfo(tabpagenr())[0].windows
+            if getwinvar(winid, "&ft") == "netrw"
+                let netrw_isopen = 1
+                call win_execute(winid, "q")
+            endif
+        endfor
+        if netrw_isopen == 0
+            exec 'Lexplore ' . expand('%:p:h')
+            exec 'vertical resize 50'
+        endif
     endif
 endfun
 

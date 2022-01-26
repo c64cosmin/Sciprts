@@ -17,10 +17,13 @@ if has("gui_running")
 	let s:red   ="#ff0000"
 	let s:black ="#000000"
 	let s:white ="#ffffff"
+	let s:bggray="#1a1a1a"
 
 	let s:diff_add_bg="#002200"
 	let s:diff_chg_bg="#000044"
 	let s:diff_del_fg="#660000"
+
+	let s:rederror="#a00000"
 else
 	set t_Co=256
 
@@ -41,10 +44,13 @@ else
 	let s:red   ="196"
 	let s:black ="0"
 	let s:white ="231"
+	let s:bggray="234"
 
 	let s:diff_add_bg="52"
 	let s:diff_chg_bg="17"
 	let s:diff_del_fg="52"
+
+	let s:rederror="124"
 endif
 
 exec "hi Pmenu            " . s:bg . s:color_b1 . s:fg . s:color_b3
@@ -64,7 +70,9 @@ exec "hi Visual           " . s:bg . s:color_g0 . s:fg . s:color_g1 . s:tx . "bo
 exec "hi IncSearch        " . s:bg . s:color_g1 . s:fg . s:color_g2
 exec "hi Search           " . s:bg . s:color_g0 . s:fg . s:color_g1
 exec "hi Cursor           " . s:bg . s:color_g1 . s:fg . s:color_g2 . s:tx . "bold"
+exec "hi CursorLine       " . s:bg . s:bggray
 exec "hi EndOfBuffer      " . s:bg . s:black    . s:fg . s:color_r0 . s:tx . "bold"
+exec "hi SpellBad         " . s:bg . s:rederror . s:fg . s:black
 
 exec "hi EasyMotionTarget " . s:fg . s:red                          . s:tx . "bold"
 exec "hi EasyMotionShade  " . s:fg . s:color_b1
