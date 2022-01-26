@@ -20,7 +20,8 @@ function ToggleExplorer()
         for winid in gettabinfo(tabpagenr())[0].windows
             if getwinvar(winid, "&ft") == "netrw"
                 let netrw_isopen = 1
-                call win_execute(winid, "q")
+				"if there is we focus on it
+                call win_gotoid(winid)
             endif
         endfor
         if netrw_isopen == 0
