@@ -14,14 +14,11 @@ set ssop-=folds      " do not store folds
 
 let g:html_use_css=1
 
-"let g:netrw_liststyle = 3
 let g:netrw_silent = 1
 let g:netrw_errorlvl = 2
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
+let w:netrw_preview = 1
 
 "EasyMotion
 let g:EasyMotion_do_mapping = 0 " Disable default mappings

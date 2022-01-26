@@ -9,8 +9,7 @@ vmap <A-Up> :m '<-2<CR>gv=gv
 nmap <F3> :set hlsearch! hlsearch?<CR>
 "Create new vertical terminal in current dir
 nmap <C-w>b :let $VIM_DIR=expand('%:p:h')<CR>:vert term<CR>cd $VIM_DIR;clear<CR>
-nmap <C-e> :call ToggleExplorer(0)<CR>
-nmap <Leader><C-e> :call ToggleExplorer(1)<CR>
+nmap <C-e> :call ToggleExplorer()<CR>
 "Move tabs left/right
 nmap g<Right> :tabm +1<CR>
 nmap g<Left> :tabm -1<CR>
