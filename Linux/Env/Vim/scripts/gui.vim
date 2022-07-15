@@ -1,4 +1,4 @@
-set mouse=a
+"set mouse=a
 if has("gui_running")
 set guioptions=!c
 let g:c64_guifontstring="Liberation Mono"

@@ -23,8 +23,9 @@ nmap <Leader>en :set number! number?<CR>
 nmap <Leader>eN :set relativenumber! relativenumber?<CR>
 nmap <Leader>eh :%!xxd<CR>
 nmap <Leader>eH :%!xxd -r<CR>
-nmap <Leader>po :call CloseHiddenBuffers()<CR>:source     ~/.vim/session/
-nmap <Leader>pw :call CloseHiddenBuffers()<CR>:mksession! ~/.vim/session/last.vim<CR>:mksession! ~/.vim/session/
+nmap <Leader>pp :call CloseHiddenBuffers()<CR>:source ~/.vim/session/last.vim<CR>
+nmap <Leader>po :call CloseHiddenBuffers()<CR>:source ~/.vim/session/
+nmap <Leader>pw :call CloseHiddenBuffers()<CR>:! cp ~/.vim/session/* ~/.vim/sessionbackup<CR>:mksession! ~/.vim/session/last.vim<CR>:mksession! ~/.vim/session/
 
 "EasyMotion
 nmap s <Plug>(easymotion-overwin-f2)
@@ -48,7 +49,7 @@ nmap <Leader>vi  :vsplit<CR><C-w>w:YcmCompleter GoToInclude<CR>
 nmap <Leader>sd   :split<CR><C-w>w:YcmCompleter GoToDeclaration<CR>
 nmap <Leader>sf   :split<CR><C-w>w:YcmCompleter GoToDefinition<CR>
 nmap <Leader>si   :split<CR><C-w>w:YcmCompleter GoToInclude<CR>
-nmap <C-LeftMouse> <LeftMouse>:YcmCompleter GoTo<CR>
+"nmap <C-LeftMouse> <LeftMouse>:YcmCompleter GoTo<CR>
 
 "Prettier
 nmap <Leader>ep <Plug>(Prettier)

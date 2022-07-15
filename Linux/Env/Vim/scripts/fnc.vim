@@ -1,24 +1,23 @@
 function ToggleExplorer()
-	"find if there is a netrw
-	let netrw_winid = 0
-	for winid in gettabinfo(tabpagenr())[0].windows
-		if getwinvar(winid, "&ft") == "netrw"
-			let netrw_winid = winid
-		endif
-	endfor
-	"if there is no netrw
-	if netrw_winid == 0
-		exec 'let g:netrw_browse_split = 4'
-		exec 'Lexplore ' . expand('%:p:h')
-		exec 'vertical resize 50'
-	else
-		"if we are on the netrw
-		if win_getid() == netrw_winid
-			exec 'q'
-		else
-			call win_gotoid(netrw_winid)
-		endif
-	endif
+    "find if there is a netrw
+    let netrw_winid = 0
+    for winid in gettabinfo(tabpagenr())[0].windows
+        if getwinvar(winid, "&ft") == "netrw"
+            let netrw_winid = winid
+        endif
+    endfor
+    "if there is no netrw
+    if netrw_winid == 0
+        exec 'Lexplore ' . expand('%:p:h')
+        exec 'vertical resize 50'
+    else
+        "if we are on the netrw
+        if win_getid() == netrw_winid
+            exec 'q'
+        else
+            call win_gotoid(netrw_winid)
+        endif
+    endif
 endfun
 
 function! CloseHiddenBuffers()

@@ -1,6 +1,6 @@
 set tabstop=4
 set shiftwidth=4
-"set expandtab
+set expandtab
 set nowrap
 set scrolloff=8
 set ff=unix
@@ -19,6 +19,7 @@ let g:netrw_errorlvl = 2
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let w:netrw_preview = 1
+let g:netrw_browse_split = 4
 
 "EasyMotion
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
