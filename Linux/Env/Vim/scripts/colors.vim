@@ -77,6 +77,9 @@ exec "hi SpellBad         " . s:bg . s:rederror . s:fg . s:black
 exec "hi EasyMotionTarget " . s:fg . s:red                          . s:tx . "bold"
 exec "hi EasyMotionShade  " . s:fg . s:color_b1
 
+exec "hi! default link CocMenuSel PmenuSel"
+exec "hi! CocListLine     " . s:fg . s:white
+
 if &diff
     exec "hi DiffAdd    " . s:fg . s:none        . s:bg . s:diff_add_bg
     exec "hi DiffChange " . s:fg . s:none        . s:bg . s:diff_chg_bg
