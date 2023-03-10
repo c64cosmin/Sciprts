@@ -1,13 +1,15 @@
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
+set rtp+=~/.vim/bundle/vim-plug
+call plug#begin('~/.vim/bundle')
+
+Plug 'tikhomirov/vim-glsl'
+Plug 'kshenoy/vim-signature'
+Plug 'kien/ctrlp.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'prettier/vim-prettier'
 if !&diff
-Plugin 'ycm-core/YouCompleteMe'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    "Plug 'ycm-core/YouCompleteMe'
 endif
-Plugin 'easymotion/vim-easymotion'
-Plugin 'kien/ctrlp.vim'
-Plugin 'kshenoy/vim-signature'
-Plugin 'udalov/kotlin-vim'
-Plugin 'prettier/vim-prettier'
-call vundle#end()
+
+call plug#end()
 filetype plugin indent on

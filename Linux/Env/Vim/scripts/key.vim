@@ -14,6 +14,8 @@ nmap <C-e> :call ToggleExplorer()<CR>
 nmap g<Right> :tabm +1<CR>
 nmap g<Left> :tabm -1<CR>
 nmap gg :tab split<CR>
+"Delete to end
+nmap d; d/;\\|$<CR>
 "New terminal tab in current dir
 nmap gb :let $VIM_DIR=expand('%:p:h')<CR>:tab term<CR>cd $VIM_DIR;clear<CR>
 nmap ge :Tex<CR>
@@ -33,23 +35,7 @@ nmap S <Plug>(easymotion-bd-jk)
 "vim-signature
 nmap <Leader>em :SignatureToggleSigns<CR> 
 
-"YouCompleteMe
-nmap <Leader>ye :YcmDiags<CR>
-nmap <Leader>yd :YcmCompleter GoToDeclaration<CR>
-nmap <Leader>yf :YcmCompleter GoToDefinition<CR>
-nmap <Leader>yi :YcmCompleter GoToInclude<CR>
-nmap <Leader>yr :YcmCompleter GoToReferences<CR>
-nmap <Leader>yx :YcmCompleter FixIt<CR>
-nmap <Leader>yn :YcmCompleter RefactorRename 
-nmap <Leader>yy :YcmRestartServer<CR>
-nmap <leader>yt <plug>(YCMHover)
-nmap <Leader>vd  :vsplit<CR><C-w>w:YcmCompleter GoToDeclaration<CR>
-nmap <Leader>vf  :vsplit<CR><C-w>w:YcmCompleter GoToDefinition<CR>
-nmap <Leader>vi  :vsplit<CR><C-w>w:YcmCompleter GoToInclude<CR>
-nmap <Leader>sd   :split<CR><C-w>w:YcmCompleter GoToDeclaration<CR>
-nmap <Leader>sf   :split<CR><C-w>w:YcmCompleter GoToDefinition<CR>
-nmap <Leader>si   :split<CR><C-w>w:YcmCompleter GoToInclude<CR>
-"nmap <C-LeftMouse> <LeftMouse>:YcmCompleter GoTo<CR>
-
+"auto completer
+source ~/.vim/scripts/coc.vim
 "Prettier
 nmap <Leader>ep <Plug>(Prettier)

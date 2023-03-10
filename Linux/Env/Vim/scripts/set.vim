@@ -21,6 +21,9 @@ let g:netrw_liststyle = 3
 let w:netrw_preview = 1
 let g:netrw_browse_split = 4
 
+"glsl completer
+autocmd! BufNewFile,BufRead *.vert,*.frag,*.vs,*.fs set ft=glsl
+
 "EasyMotion
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 let g:EasyMotion_smartcase = 1
