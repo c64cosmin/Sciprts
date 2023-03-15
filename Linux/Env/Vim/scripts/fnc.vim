@@ -6,9 +6,11 @@ function ToggleExplorer()
             let netrw_winid = winid
         endif
     endfor
+
     "if there is no netrw
     if netrw_winid == 0
-        exec 'Lexplore ' . expand('%:p:h')
+        exec 'Vexplore ' . expand('%:p:h')
+        wincmd H
         exec 'vertical resize 50'
     else
         "if we are on the netrw
