@@ -11,7 +11,6 @@ nmap <F3> :set hlsearch! hlsearch?<CR>
 
 "Create new vertical terminal in current dir
 nmap <C-w>b :let $VIM_DIR=expand('%:p:h')<CR>:vert term<CR>cd $VIM_DIR;clear<CR>
-nmap <C-e> :call ToggleExplorer()<CR>
 
 "Move tabs left/right
 nmap g<Right> :tabm +1<CR>
@@ -48,12 +47,10 @@ source ~/.vim/scripts/coc.vim
 "Prettier
 nmap <Leader>ep <Plug>(Prettier)
 
-"undotree
-nmap <C-u> :call ToggleUndoTree()<CR>
-
 "fzf
 nmap <Leader>fs :Rg<CR>
 nmap <Leader>fl :BLines<CR>
 nmap <Leader>ff :Buffers<CR>
+nmap <Leader>fd :Files<CR>
 nmap <Leader>fg :GFiles<CR>
 

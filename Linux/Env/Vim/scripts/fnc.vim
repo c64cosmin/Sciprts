@@ -21,7 +21,9 @@ function! ToggleExplorer()
         endif
     endif
 endfun
+nmap <C-e> :call ToggleExplorer()<CR>
 
+"undotree
 function! ToggleUndoTree()
     "find if there is a undotree
     let undotree_winid = 0
@@ -45,6 +47,7 @@ function! ToggleUndoTree()
         endif
     endif
 endfun
+nmap <C-u> :call ToggleUndoTree()<CR>
 
 function! CloseHiddenBuffers()
     for buf in getbufinfo()
@@ -53,3 +56,45 @@ function! CloseHiddenBuffers()
         endif
     endfor
 endfun
+
+let g:EasyJumpWindowList = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1]
+let g:EasyJumpBufferList = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1]
+function! EasyJump(index, action)
+    if a:action == 1
+        " Save the current window ID
+        let g:EasyJumpWindowList[a:index] = win_getid()
+        let g:EasyJumpBufferList[a:index] = bufnr()
+		echo 'Saved to index ' . a:index
+    elseif a:action == 0
+        let winid = g:EasyJumpWindowList[a:index]
+		let bufid = g:EasyJumpBufferList[a:index]
+        
+        if winid != -1
+            exec 'call win_gotoid(' . winid . ')'
+			if winid != win_getid()
+				let g:EasyJumpWindowList[a:index] = win_getid()
+			endif
+			exec 'buffer' . bufid
+        endif
+    endif
+endfunction
+nmap <silent> g1 :call EasyJump(0,0)<CR>
+nmap <silent> g2 :call EasyJump(1,0)<CR>
+nmap <silent> g3 :call EasyJump(2,0)<CR>
+nmap <silent> g4 :call EasyJump(3,0)<CR>
+nmap <silent> g5 :call EasyJump(4,0)<CR>
+nmap <silent> g6 :call EasyJump(5,0)<CR>
+nmap <silent> g7 :call EasyJump(6,0)<CR>
+nmap <silent> g8 :call EasyJump(7,0)<CR>
+nmap <silent> g9 :call EasyJump(8,0)<CR>
+nmap <silent> g0 :call EasyJump(9,0)<CR>
+nmap <silent> <Leader>m1 :call EasyJump(0,1)<CR>
+nmap <silent> <Leader>m2 :call EasyJump(1,1)<CR>
+nmap <silent> <Leader>m3 :call EasyJump(2,1)<CR>
+nmap <silent> <Leader>m4 :call EasyJump(3,1)<CR>
+nmap <silent> <Leader>m5 :call EasyJump(4,1)<CR>
+nmap <silent> <Leader>m6 :call EasyJump(5,1)<CR>
+nmap <silent> <Leader>m7 :call EasyJump(6,1)<CR>
+nmap <silent> <Leader>m8 :call EasyJump(7,1)<CR>
+nmap <silent> <Leader>m9 :call EasyJump(8,1)<CR>
+nmap <silent> <Leader>m0 :call EasyJump(9,1)<CR>
