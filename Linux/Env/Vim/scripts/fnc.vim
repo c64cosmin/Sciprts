@@ -1,4 +1,4 @@
-function ToggleExplorer()
+function! ToggleExplorer()
     "find if there is a netrw
     let netrw_winid = 0
     for winid in gettabinfo(tabpagenr())[0].windows
@@ -18,6 +18,30 @@ function ToggleExplorer()
             exec 'q'
         else
             call win_gotoid(netrw_winid)
+        endif
+    endif
+endfun
+
+function! ToggleUndoTree()
+    "find if there is a undotree
+    let undotree_winid = 0
+    for winid in gettabinfo(tabpagenr())[0].windows
+        if getwinvar(winid, "&ft") == "undotree"
+            let undotree_winid = winid
+        endif
+    endfor
+
+    "if there is no undotree
+    if undotree_winid == 0
+        exec 'UndotreeToggle'
+        exec 'UndotreeFocus'
+        exec 'vertical resize 40'
+    else
+        "if we are on the netrw
+        if win_getid() == undotree_winid
+			exec 'UndotreeToggle'
+        else
+			exec 'UndotreeFocus'
         endif
     endif
 endfun

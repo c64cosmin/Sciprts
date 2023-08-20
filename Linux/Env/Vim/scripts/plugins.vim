@@ -1,14 +1,20 @@
 set rtp+=~/.vim/bundle/vim-plug
-call plug#begin('~/.vim/bundle')
+if has('nvim')
+	call plug#begin('~/.local/share/nvim/site/plugged')
+else
+	call plug#begin('~/.vim/bundle')
+endif
 
 Plug 'tikhomirov/vim-glsl'
 Plug 'kshenoy/vim-signature'
-Plug 'kien/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'prettier/vim-prettier'
+Plug 'tpope/vim-surround'
+Plug 'mbbill/undotree'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 if !&diff
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    "Plug 'ycm-core/YouCompleteMe'
 endif
 
 call plug#end()
