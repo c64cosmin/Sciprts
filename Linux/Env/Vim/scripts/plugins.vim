@@ -13,6 +13,8 @@ Plug 'tpope/vim-surround'
 Plug 'mbbill/undotree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+"remove :W from fzf.vim
+command! W exec ':w'
 if !&diff
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif

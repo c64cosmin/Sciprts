@@ -41,9 +41,9 @@ function! ToggleUndoTree()
     else
         "if we are on the netrw
         if win_getid() == undotree_winid
-			exec 'UndotreeToggle'
+            exec 'UndotreeToggle'
         else
-			exec 'UndotreeFocus'
+            exec 'UndotreeFocus'
         endif
     endif
 endfun
@@ -64,17 +64,49 @@ function! EasyJump(index, action)
         " Save the current window ID
         let g:EasyJumpWindowList[a:index] = win_getid()
         let g:EasyJumpBufferList[a:index] = bufnr()
-		echo 'Saved to index ' . a:index
+        echo 'Saved to index ' . a:index
     elseif a:action == 0
         let winid = g:EasyJumpWindowList[a:index]
-		let bufid = g:EasyJumpBufferList[a:index]
-        
+        let bufid = g:EasyJumpBufferList[a:index]
+
         if winid != -1
+            "try to move to that window
             exec 'call win_gotoid(' . winid . ')'
-			if winid != win_getid()
-				let g:EasyJumpWindowList[a:index] = win_getid()
-			endif
-			exec 'buffer' . bufid
+            "did this window id lead us to the proper buffer?
+            if bufid != bufnr()
+                "in current tab is the buffer open in another window?
+                let window_list = range(1, winnr('$'))
+                for it_winid in window_list
+                    let it_bufid = winbufnr(it_winid)
+                    "we found a window with the same buffer
+                    if it_bufid == bufid
+                        exec 'call win_gotoid(' . it_winid . ')'
+                        let g:EasyJumpWindowList[a:index] = win_getid()
+                        return
+                    endif
+                endfor
+
+                "there is no window with that buffer open here
+                "search for other tabs
+                let tab_list = range(1, tabpagenr('$'))
+                for it_tabid in tab_list
+                    let window_list = gettabinfo(it_tabid)[0].windows
+                    for it_winid in window_list
+                        let it_bufid = winbufnr(it_winid)
+                        "we found a window with the same buffer
+                        if it_bufid == bufid
+                            exec 'call win_gotoid(' . it_winid . ')'
+                            let g:EasyJumpWindowList[a:index] = win_getid()
+                            return
+                        endif
+                    endfor
+                endfor
+
+                "there is not more window with that buffer, open a new window
+                exec 'vsplit'
+                exec 'buffer' . bufid
+                let g:EasyJumpWindowList[a:index] = win_getid()
+            endif
         endif
     endif
 endfunction
