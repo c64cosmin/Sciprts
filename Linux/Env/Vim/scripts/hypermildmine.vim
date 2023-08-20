@@ -37,12 +37,12 @@ function! s:hi(group, foreground, background, fontStyle)
           \ . " guifg="     . a:foreground
           \ . " guibg="     . a:background
           \ . " gui="       . a:fontStyle
-	else
+    else
         exec  "highlight "  . a:group
           \ . " ctermfg="     . a:foreground
           \ . " ctermbg="     . a:background
           \ . " cterm="       . a:fontStyle
-	endif
+    endif
 endfunction
 
 
@@ -77,10 +77,10 @@ if has("gui_running")
     let s:error         =   '#ff0000'
     let s:errorbg       =   '#550000'
 
-	let s:cursorline    =   '#1a1a1a'
-	let s:cursorcol     =   '#333333'
-	let s:visual        =   '#305030'
-	let s:linenr        =   '#495162'
+    let s:cursorline    =   '#1a1a1a'
+    let s:cursorcol     =   '#333333'
+    let s:visual        =   '#305030'
+    let s:linenr        =   '#495162'
     let s:rustEnumVariant=  '#e5c07b'
     let s:rustModPath=      '#e5c07b'
     let s:Identifier=       '#aab1c0'
@@ -114,10 +114,10 @@ else
     let s:error         =   '196'
     let s:errorbg       =   '88'
 
-	let s:cursorline    =   '232'
-	let s:cursorcol     =   '234'
-	let s:visual        =   '22'
-	let s:linenr        =   '59'
+    let s:cursorline    =   '232'
+    let s:cursorcol     =   '234'
+    let s:visual        =   '22'
+    let s:linenr        =   '59'
     let s:rustEnumVariant=  '180'
     let s:rustModPath=      '180'
     let s:Identifier=       '145'

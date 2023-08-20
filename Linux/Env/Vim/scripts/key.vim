@@ -1,3 +1,6 @@
+"motions
+nmap H 0
+nmap L $
 "Alt up/down to move lines
 nmap <A-Down> :m .+1<CR>==
 nmap <A-Up> :m .-2<CR>==
@@ -54,3 +57,28 @@ nmap <Leader>ff :Buffers<CR>
 nmap <Leader>fd :Files<CR>
 nmap <Leader>fg :GFiles<CR>
 
+"easy jump
+nmap <silent> <Leader>H :call _c64cosmin_Harpwn_Add()<CR>
+nmap <silent> <Leader>h :call _c64cosmin_Harpwn_Menu()<CR>
+nmap <silent> > :call _c64cosmin_Harpwn_Next(1)<CR>
+nmap <silent> < :call _c64cosmin_Harpwn_Next(-1)<CR>
+nmap <silent> g1 :call _c64cosmin_Harpwn_Go(0)<CR>
+nmap <silent> g2 :call _c64cosmin_Harpwn_Go(1)<CR>
+nmap <silent> g3 :call _c64cosmin_Harpwn_Go(2)<CR>
+nmap <silent> g4 :call _c64cosmin_Harpwn_Go(3)<CR>
+nmap <silent> g5 :call _c64cosmin_Harpwn_Go(4)<CR>
+nmap <silent> g6 :call _c64cosmin_Harpwn_Go(5)<CR>
+nmap <silent> g7 :call _c64cosmin_Harpwn_Go(6)<CR>
+nmap <silent> g8 :call _c64cosmin_Harpwn_Go(7)<CR>
+nmap <silent> g9 :call _c64cosmin_Harpwn_Go(8)<CR>
+nmap <silent> g0 :call _c64cosmin_Harpwn_Go(9)<CR>
+nmap <silent> <Leader>H1 :call _c64cosmin_Harpwn_Set(0)<CR>
+nmap <silent> <Leader>H2 :call _c64cosmin_Harpwn_Set(1)<CR>
+nmap <silent> <Leader>H3 :call _c64cosmin_Harpwn_Set(2)<CR>
+nmap <silent> <Leader>H4 :call _c64cosmin_Harpwn_Set(3)<CR>
+nmap <silent> <Leader>H5 :call _c64cosmin_Harpwn_Set(4)<CR>
+nmap <silent> <Leader>H6 :call _c64cosmin_Harpwn_Set(5)<CR>
+nmap <silent> <Leader>H7 :call _c64cosmin_Harpwn_Set(6)<CR>
+nmap <silent> <Leader>H8 :call _c64cosmin_Harpwn_Set(7)<CR>
+nmap <silent> <Leader>H9 :call _c64cosmin_Harpwn_Set(8)<CR>
+nmap <silent> <Leader>H0 :call _c64cosmin_Harpwn_Set(9)<CR>

@@ -1,8 +1,8 @@
 set rtp+=~/.vim/bundle/vim-plug
 if has('nvim')
-	call plug#begin('~/.local/share/nvim/site/plugged')
+    call plug#begin('~/.local/share/nvim/site/plugged')
 else
-	call plug#begin('~/.vim/bundle')
+    call plug#begin('~/.vim/bundle')
 endif
 
 Plug 'tikhomirov/vim-glsl'

@@ -5,6 +5,7 @@ source ~/.vim/scripts/fnc.vim
 source ~/.vim/scripts/key.vim
 source ~/.vim/scripts/set.vim
 if has('nvim')
-	source ~/.vim/scripts/neo.vim
+    source ~/.vim/scripts/neo.vim
 endif
+source ~/.vim/scripts/harpwn.vim
 source ~/.vim.local.vim
