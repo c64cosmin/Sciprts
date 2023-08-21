@@ -1,6 +1,7 @@
 "motions
 nmap H 0
 nmap L $
+
 "Alt up/down to move lines
 nmap <A-Down> :m .+1<CR>==
 nmap <A-Up> :m .-2<CR>==
@@ -27,8 +28,9 @@ nmap ge :Tex<CR>
 "editor
 nmap <Leader>el :set list! list?<CR>
 nmap <Leader>ew :set wrap! wrap?<CR>
-nmap <Leader>en :set number! number?<CR>
-nmap <Leader>eN :set relativenumber! relativenumber?<CR>
+nmap <Leader>en :set number! number?<CR>:set relativenumber! relativenumber?<CR>
+nmap <Leader>eN :set number! number?<CR>
+nmap <Leader>ec :set cursorline! cursorline?<CR>
 nmap <Leader>eh :%!xxd<CR>
 nmap <Leader>eH :%!xxd -r<CR>
 
@@ -58,27 +60,7 @@ nmap <Leader>fd :Files<CR>
 nmap <Leader>fg :GFiles<CR>
 
 "harpwn
-nmap <silent> <Leader>H :HarpwnAdd<CR>
-nmap <silent> <Leader>h :HarpwnMenu<CR>
+nmap <silent> + :HarpwnAdd<CR>
+nmap <silent> = :HarpwnMenu<CR>
 nmap <silent> > :HarpwnNext 1<CR>
 nmap <silent> < :HarpwnNext -1<CR>
-nmap <silent> g1 :HarpwnGo 0<CR>
-nmap <silent> g2 :HarpwnGo 1<CR>
-nmap <silent> g3 :HarpwnGo 2<CR>
-nmap <silent> g4 :HarpwnGo 3<CR>
-nmap <silent> g5 :HarpwnGo 4<CR>
-nmap <silent> g6 :HarpwnGo 5<CR>
-nmap <silent> g7 :HarpwnGo 6<CR>
-nmap <silent> g8 :HarpwnGo 7<CR>
-nmap <silent> g9 :HarpwnGo 8<CR>
-nmap <silent> g0 :HarpwnGo 9<CR>
-nmap <silent> <Leader>H1 :HarpwnSet 0<CR>
-nmap <silent> <Leader>H2 :HarpwnSet 1<CR>
-nmap <silent> <Leader>H3 :HarpwnSet 2<CR>
-nmap <silent> <Leader>H4 :HarpwnSet 3<CR>
-nmap <silent> <Leader>H5 :HarpwnSet 4<CR>
-nmap <silent> <Leader>H6 :HarpwnSet 5<CR>
-nmap <silent> <Leader>H7 :HarpwnSet 6<CR>
-nmap <silent> <Leader>H8 :HarpwnSet 7<CR>
-nmap <silent> <Leader>H9 :HarpwnSet 8<CR>
-nmap <silent> <Leader>H0 :HarpwnSet 9<CR>
