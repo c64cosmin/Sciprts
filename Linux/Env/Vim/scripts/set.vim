@@ -1,6 +1,7 @@
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set signcolumn=yes
 set nowrap
 set scrolloff=8
 set ff=unix
@@ -37,4 +38,4 @@ let g:ycm_warning_symbol = "!!"
 let g:ctrlp_cmd = 'CtrlPBuffer'
 
 "harpwn
-let g:Harpwn_DontShowTip = 1
+let g:Harpwn_DontShowTip = 0

@@ -1,5 +1,4 @@
 set updatetime=300
-set signcolumn=yes
 "tab trigger
 inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
 " Use <c-space> to trigger completion.
