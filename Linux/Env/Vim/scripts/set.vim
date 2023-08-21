@@ -34,8 +34,5 @@ let g:ycm_always_populate_location_list = 1
 let g:ycm_warning_symbol = "!!"
 "let g:ycm_auto_trigger = 1
 
-"CtrlP
-let g:ctrlp_cmd = 'CtrlPBuffer'
-
 "harpwn
 let g:Harpwn_DontShowTip = 0

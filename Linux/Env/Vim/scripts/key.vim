@@ -2,6 +2,12 @@
 nnoremap H 0
 nnoremap L $
 
+"QoL
+xnoremap <C-p> pgvygv<Esc>
+nnoremap <C-p> p
+nnoremap <C-y> "+y
+xnoremap <C-y> "+y
+
 "Alt up/down to move lines
 nnoremap <A-Down> :m .+1<CR>==
 nnoremap <A-Up> :m .-2<CR>==
