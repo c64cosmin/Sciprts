@@ -20,5 +20,10 @@ if !&diff
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
 
+if has('nvim')
+	Plug 'nvim-lua/plenary.nvim'
+	Plug 'nvim-lua/popup.nvim'
+endif
+
 call plug#end()
 filetype plugin indent on

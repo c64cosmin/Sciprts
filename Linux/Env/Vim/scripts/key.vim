@@ -61,6 +61,6 @@ nmap <Leader>fg :GFiles<CR>
 
 "harpwn
 nmap <silent> + :HarpwnAdd<CR>
-nmap <silent> = :HarpwnMenu<CR>
+nmap <silent> - :HarpwnMenu<CR>
 nmap <silent> > :HarpwnNext 1<CR>
 nmap <silent> < :HarpwnNext -1<CR>
