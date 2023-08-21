@@ -35,3 +35,6 @@ let g:ycm_warning_symbol = "!!"
 
 "CtrlP
 let g:ctrlp_cmd = 'CtrlPBuffer'
+
+"harpwn
+let g:Harpwn_DontShowTip = 1

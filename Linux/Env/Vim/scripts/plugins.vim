@@ -11,6 +11,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'prettier/vim-prettier'
 Plug 'tpope/vim-surround'
 Plug 'mbbill/undotree'
+Plug 'c64cosmin/harpwn'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 "remove :W from fzf.vim

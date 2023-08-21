@@ -7,5 +7,4 @@ source ~/.vim/scripts/set.vim
 if has('nvim')
     source ~/.vim/scripts/neo.vim
 endif
-source ~/.vim/scripts/harpwn.vim
 source ~/.vim.local.vim
