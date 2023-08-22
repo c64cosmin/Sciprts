@@ -1,12 +1,10 @@
-"motions
-nnoremap H 0
-nnoremap L $
-
 "QoL
 xnoremap <C-p> pgvygv<Esc>
 nnoremap <C-p> p
-nnoremap <C-y> "+y
 xnoremap <C-y> "+y
+nnoremap <C-y> "+y
+nnoremap H 0
+nnoremap L $
 
 "Alt up/down to move lines
 nnoremap <A-Down> :m .+1<CR>==
@@ -40,11 +38,6 @@ nnoremap <Leader>ec :set cursorline! cursorline?<CR>
 nnoremap <Leader>eh :%!xxd<CR>
 nnoremap <Leader>eH :%!xxd -r<CR>
 
-"project
-nnoremap <Leader>pp :call CloseHiddenBuffers()<CR>:source ~/.vim/session/last.vim<CR>
-nnoremap <Leader>po :call CloseHiddenBuffers()<CR>:source ~/.vim/session/
-nnoremap <Leader>pw :call CloseHiddenBuffers()<CR>:! cp ~/.vim/session/* ~/.vim/sessionbackup<CR>:mksession! ~/.vim/session/last.vim<CR>:mksession! ~/.vim/session/
-
 "EasyMotion
 nnoremap s <Plug>(easymotion-overwin-f2)
 nnoremap S <Plug>(easymotion-bd-jk)
@@ -66,7 +59,18 @@ nnoremap <Leader>fd :Files<CR>
 nnoremap <Leader>fg :GFiles<CR>
 
 "harpwn
+let g:HarpwnLoaded = 0
+autocmd SessionLoadPost * let g:HarpwnLoaded = 0
+autocmd VimLeave * exec "HarpwnSave"
+function! HarpwnMenuOpen()
+    if g:HarpwnLoaded == 0
+        call _c64cosmin_Harpwn_ReadSession()
+        let g:HarpwnLoaded = 1
+    endif
+    call _c64cosmin_Harpwn_Menu()
+endfunction
+
 nnoremap <silent> + :HarpwnAdd<CR>
-nnoremap <silent> - :HarpwnMenu<CR>
+nnoremap <silent> - :call HarpwnMenuOpen()<CR>
 nnoremap <silent> > :HarpwnNext 1<CR>
 nnoremap <silent> < :HarpwnNext -1<CR>

@@ -35,4 +35,4 @@ let g:ycm_warning_symbol = "!!"
 "let g:ycm_auto_trigger = 1
 
 "harpwn
-let g:Harpwn_DontShowTip = 0
+let g:Harpwn_DontShowTip = 1

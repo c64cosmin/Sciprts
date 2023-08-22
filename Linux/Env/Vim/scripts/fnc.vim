@@ -50,11 +50,3 @@ function! ToggleUndoTree()
     endif
 endfun
 nmap <C-u> :call ToggleUndoTree()<CR>
-
-function! CloseHiddenBuffers()
-    for buf in getbufinfo()
-        if len(buf.windows) == 0 && len(get(buf, "popups", [])) == 0
-            exec 'bw! ' . buf.bufnr
-        endif
-    endfor
-endfun
