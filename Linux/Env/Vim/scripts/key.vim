@@ -17,8 +17,6 @@ vnoremap <A-Up> :m '<-2<CR>gv=gv
 "F3 enable/disable search highlight
 nnoremap <F3> :set hlsearch! hlsearch?<CR>
 
-"Create new vertical terminal in current dir
-nnoremap <C-w>b :let $VIM_DIR=expand('%:p:h')<CR>:vert term<CR>cd $VIM_DIR;clear<CR>
 
 "Move tabs left/right
 nnoremap g<Right> :tabm +1<CR>
@@ -26,6 +24,8 @@ nnoremap g<Left> :tabm -1<CR>
 nnoremap gg :tab split<CR>
 
 "New terminal tab in current dir
+nnoremap <C-w>b :let $VIM_DIR=expand('%:p:h')<CR>:vert term<CR>cd $VIM_DIR;clear<CR><C-w>L
+nnoremap <C-b> :let $VIM_DIR=expand('%:p:h')<CR>:vert term<CR>cd $VIM_DIR;clear<CR><C-w>J<C-w>:resize 10<CR>
 nnoremap gb :let $VIM_DIR=expand('%:p:h')<CR>:tab term<CR>cd $VIM_DIR;clear<CR>
 nnoremap ge :Tex<CR>
 
