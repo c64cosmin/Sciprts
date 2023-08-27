@@ -48,27 +48,12 @@ nnoremap <Leader>em :SignatureToggleSigns<CR>
 "auto completer
 source ~/.vim/scripts/coc.vim
 
-"Prettier
-nnoremap <Leader>ep <Plug>(Prettier)
-
 "fzf
 nnoremap <Leader>fs :Rg<CR>
 nnoremap <Leader>fl :BLines<CR>
 nnoremap <Leader>ff :Buffers<CR>
 nnoremap <Leader>fd :Files<CR>
 nnoremap <Leader>fg :GFiles<CR>
-
-"harpwn
-let g:HarpwnLoaded = 0
-autocmd SessionLoadPost * let g:HarpwnLoaded = 0
-autocmd VimLeave * exec "HarpwnSave"
-function! HarpwnMenuOpen()
-    if g:HarpwnLoaded == 0
-        call _c64cosmin_Harpwn_ReadSession()
-        let g:HarpwnLoaded = 1
-    endif
-    call _c64cosmin_Harpwn_Menu()
-endfunction
 
 nnoremap <silent> + :HarpwnAdd<CR>
 nnoremap <silent> - :call HarpwnMenuOpen()<CR>

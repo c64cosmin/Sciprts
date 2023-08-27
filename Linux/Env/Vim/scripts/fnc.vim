@@ -50,3 +50,25 @@ function! ToggleUndoTree()
     endif
 endfun
 nmap <C-u> :call ToggleUndoTree()<CR>
+
+"Formatter
+function! DoFormatting()
+	if &ft == "typescript"
+		exec "Prettier"
+	elseif &ft == "rust"
+		exec "Rustfmt"
+	endif
+endfunction
+nnoremap <Leader>ep :call DoFormatting()<CR>
+
+"harpwn
+let g:HarpwnLoaded = 0
+autocmd SessionLoadPost * let g:HarpwnLoaded = 0
+autocmd VimLeave * exec "HarpwnOpen" | exec "HarpwnSave"
+function! HarpwnMenuOpen()
+    if g:HarpwnLoaded == 0
+        call _c64cosmin_Harpwn_ReadSession()
+        let g:HarpwnLoaded = 1
+    endif
+    call _c64cosmin_Harpwn_Menu()
+endfunction
