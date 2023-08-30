@@ -1,8 +1,12 @@
-"set mouse=a
+set mouse=a
 if has("gui_running")
 set guioptions=!c
-let g:c64_guifontstring="Liberation Mono"
-let g:c64_fontseparator=" "
+"for Windows
+let g:c64_guifontstring="Liberation_Mono"
+let g:c64_fontseparator=":h"
+"for Linux
+"let g:c64_fontseparator=" "
+"let g:c64_guifontstring="Liberation Mono"
 
 let g:c64_fontzoommax=30
 let g:c64_fontzoommin=3
@@ -38,4 +42,6 @@ nnoremap z- :call C64_fontzoomdw()<CR>
 nnoremap z0 :call C64_fontzoomdef()<CR>
 
 call C64_fontzoomdef()
+
+map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
 endif
