@@ -4,3 +4,8 @@ source ~/.vim/scripts/colors.vim
 source ~/.vim/scripts/fnc.vim
 source ~/.vim/scripts/key.vim
 source ~/.vim/scripts/set.vim
+source ~/.vim/scripts/proj.vim
+if has('nvim')
+    source ~/.vim/scripts/neo.vim
+endif
+source ~/.vim.local.vim
