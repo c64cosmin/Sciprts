@@ -51,13 +51,39 @@ function! ToggleUndoTree()
 endfun
 nmap <C-u> :call ToggleUndoTree()<CR>
 
+"Terminal
+function! ToggleTerminal()
+    "find if there is a terminal
+    let terminal_winid = 0
+    for winid in gettabinfo(tabpagenr())[0].windows
+        if getwinvar(winid, "&buftype") == "terminal"
+            let terminal_winid = winid
+        endif
+    endfor
+
+    "if there is no terminal
+    if terminal_winid == 0
+        exec ':let $VIM_DIR=' . expand('%:p:h')
+        exec ':vert term'
+        call feedkeys("cd $VIM_DIR;clear\<CR>")
+        wincmd J
+        exec 'resize 10'
+    else
+        "if we are on the terminal
+        if win_getid() != terminal_winid
+            call win_gotoid(terminal_winid)
+        endif
+    endif
+endfun
+nnoremap <C-b> :call ToggleTerminal()<CR>
+
 "Formatter
 function! DoFormatting()
-	if &ft == "typescript"
-		exec "Prettier"
-	elseif &ft == "rust"
-		exec "Rustfmt"
-	endif
+    if &ft == "typescript"
+        exec "Prettier"
+    elseif &ft == "rust"
+        exec "Rustfmt"
+    endif
 endfunction
 nnoremap <Leader>ep :call DoFormatting()<CR>
 
