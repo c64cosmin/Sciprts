@@ -63,7 +63,7 @@ function! ToggleTerminal()
 
     "if there is no terminal
     if terminal_winid == 0
-        exec ':let $VIM_DIR=' . expand('%:p:h')
+        let $VIM_DIR=expand('%:p:h')
         exec ':vert term'
         call feedkeys("cd $VIM_DIR;clear\<CR>")
         wincmd J
