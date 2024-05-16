@@ -25,7 +25,9 @@ nnoremap gg :tab split<CR>
 
 "New terminal tab in current dir
 nnoremap <C-w>b :let $VIM_DIR=expand('%:p:h')<CR>:vert term<CR>cd $VIM_DIR;clear<CR><C-w>L
+nnoremap <C-b> :let $VIM_DIR=expand('%:p:h')<CR>:vert term<CR>cd $VIM_DIR;clear<CR><C-w>J<C-w>:resize 10<CR>
 nnoremap gb :let $VIM_DIR=expand('%:p:h')<CR>:tab term<CR>cd $VIM_DIR;clear<CR>
+
 nnoremap ge :Tex<CR>
 
 "editor
