@@ -79,7 +79,7 @@ nnoremap <C-b> :call ToggleTerminal()<CR>
 
 "Formatter
 function! DoFormatting()
-    if &ft == "typescript"
+    if &ft == "typescript" || &ft == "javascript" || &ft == "jsonc" || &ft == "json" || &ft == "typescriptreact"
         exec "Prettier"
     elseif &ft == "rust"
         exec "Rustfmt"
