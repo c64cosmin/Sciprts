@@ -17,7 +17,6 @@ vnoremap <A-Up> :m '<-2<CR>gv=gv
 "F3 enable/disable search highlight
 nnoremap <F3> :set hlsearch! hlsearch?<CR>
 
-
 "Move tabs left/right
 nnoremap g<Right> :tabm +1<CR>
 nnoremap g<Left> :tabm -1<CR>
@@ -26,6 +25,7 @@ nnoremap gg :tab split<CR>
 "New terminal tab in current dir
 nnoremap <C-w>b :let $VIM_DIR=expand('%:p:h')<CR>:vert term<CR>cd $VIM_DIR;clear<CR><C-w>L
 nnoremap gb :let $VIM_DIR=expand('%:p:h')<CR>:tab term<CR>cd $VIM_DIR;clear<CR>
+
 nnoremap ge :Tex<CR>
 
 "editor
@@ -48,7 +48,7 @@ nnoremap <Leader>em :SignatureToggleSigns<CR>
 source ~/.vim/scripts/coc.vim
 
 "fzf
-nnoremap <Leader>fs :Rg<CR>
+nnoremap <Leader>fs :let $VIM_DIR=GetGitRoot()<CR>:cd $VIM_DIR<CR>:Rg<CR>
 nnoremap <Leader>fl :BLines<CR>
 nnoremap <Leader>ff :Buffers<CR>
 nnoremap <Leader>fd :Files<CR>

@@ -1,6 +1,7 @@
-"set mouse=a
+set mouse=a
 if has("gui_running")
 set guioptions=!c
+set clipboard+=unnamed
 "for Windows
 let g:c64_guifontstring="Liberation_Mono"
 let g:c64_fontseparator=":h"
@@ -44,4 +45,13 @@ nnoremap z0 :call C64_fontzoomdef()<CR>
 call C64_fontzoomdef()
 
 map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
+
+set shell=bash.exe
+set shellslash
+set shellpipe=|
+set shellredir=>
+set shellquote=\"
+set shellxquote=
+set shellcmdflag=-c
+
 endif

@@ -79,7 +79,7 @@ nnoremap <C-b> :call ToggleTerminal()<CR>
 
 "Formatter
 function! DoFormatting()
-    if &ft == "typescript" || &ft == "javascript" || &ft == "jsonc" || &ft == "json" || &ft == "typescriptreact"
+    if &ft == "typescript"
         exec "Prettier"
     elseif &ft == "rust"
         exec "Rustfmt"
@@ -97,4 +97,14 @@ function! HarpwnMenuOpen()
         let g:HarpwnLoaded = 1
     endif
     call _c64cosmin_Harpwn_Menu()
+endfunction
+
+function! GetGitRoot()
+    let l:git_root = systemlist('"git -C ' . expand('%:p:h') . ' rev-parse --show-toplevel 2>/dev/null"')
+    let l:git_root = empty(l:git_root) ? "" : l:git_root[0]
+
+    if empty(l:git_root)
+        return ""
+    endif
+    return l:git_root
 endfunction
