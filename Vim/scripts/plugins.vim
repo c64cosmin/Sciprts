@@ -5,21 +5,33 @@ else
     call plug#begin('~/.vim/bundle')
 endif
 
+"Language types
 Plug 'tikhomirov/vim-glsl'
+Plug 'alx741/vim-rustfmt'
+Plug 'pangloss/vim-javascript'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'kshenoy/vim-signature'
 Plug 'easymotion/vim-easymotion'
 Plug 'prettier/vim-prettier'
-Plug 'alx741/vim-rustfmt'
 Plug 'othree/html5.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'evanleck/vim-svelte', {'branch': 'main'}
+
 Plug 'tpope/vim-surround'
 Plug 'mbbill/undotree'
 Plug 'c64cosmin/harpwn'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+
+"fzf
+if has("win32")
+    Plug 'c64cosmin/fzf', { 'do': './install --all' }
+    Plug 'c64cosmin/fzf.vim'
+else
+    Plug 'junegunn/fzf', { 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
+endif
+" Initialize configuration dictionary
+let g:fzf_vim = {}
 "remove :W from fzf.vim
 command! W exec ':w'
+
 if !&diff
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
@@ -30,4 +42,9 @@ if has('nvim')
 endif
 
 call plug#end()
+
+if has("win32")
+    let g:fzf_vim_preview_bash = 'bash.exe'
+endif
+
 filetype plugin indent on

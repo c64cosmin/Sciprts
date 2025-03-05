@@ -36,3 +36,5 @@ let g:ycm_warning_symbol = "!!"
 
 "harpwn
 let g:Harpwn_DontShowTip = 1
+
+let @l = "€khwv$€klyiconsole.log(\"spoj: A\",pA);"
